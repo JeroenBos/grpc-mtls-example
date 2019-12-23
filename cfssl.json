@@ -1,0 +1,31 @@
+{
+    "signing": {
+        "profiles": {
+            "ca": {
+                "usages": [
+                    "signing",
+                    "digital signature",
+                    "key encipherment",
+                    "cert sign",
+                    "crl sign",
+                    "server auth",
+                    "client auth"
+                ],
+                "ca_constraint": {
+                    "is_ca": true
+                },
+                "expiry": "876000h"
+            },
+            "peer": {
+                "usages": [
+                    "signing",
+                    "digital signature",
+                    "key encipherment",
+                    "client auth",
+                    "server auth"
+                ],
+                "expiry": "876000h"
+            }
+        }
+    }
+}
