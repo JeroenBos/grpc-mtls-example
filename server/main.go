@@ -59,8 +59,8 @@ func middlefunc(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo
 type GreetServer struct{}
 
 func (g *GreetServer) SayHello(ctx context.Context, req *greet.SayHelloRequest) (*greet.SayHelloResponse, error) {
-	name := req.GetName()
-	return &greet.SayHelloResponse{Response: "Hello," + name}, nil
+	respdata := "Hello," + req.GetName()
+	return &greet.SayHelloResponse{Greet: respdata}, nil
 }
 
 func NewTLS() credentials.TransportCredentials {

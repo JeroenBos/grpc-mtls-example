@@ -49,5 +49,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(resp.GetResponse())
+	fmt.Println(resp.GetGreet())
 }
