@@ -1,9 +1,0 @@
-{
-    "hosts": [],
-    "key": {
-        "algo": "ecdsa",
-        "size": 256
-    },
-    "CN": "RootCA",
-    "names": []
-}
