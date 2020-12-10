@@ -37,7 +37,8 @@ func LoadKeyPair() credentials.TransportCredentials {
 }
 
 func main() {
-	conn, err := grpc.Dial("localhost:10200", grpc.WithTransportCredentials(LoadKeyPair()))
+	ip := os.Getenv("FOO")
+	conn, err := grpc.Dial(ip + ":10200", grpc.WithTransportCredentials(LoadKeyPair()))
 	if err != nil {
 		panic(err)
 	}
