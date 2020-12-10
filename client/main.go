@@ -6,6 +6,7 @@ import (
 	"crypto/x509"
 	"fmt"
 	"io/ioutil"
+	"os"
 
 	"github.com/islishude/grpc-mtls-example/greet"
 	"google.golang.org/grpc"
