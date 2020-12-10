@@ -32,6 +32,7 @@ func LoadKeyPair() credentials.TransportCredentials {
 	tlsConfig := &tls.Config{
 		Certificates: []tls.Certificate{certificate},
 		RootCAs:      capool,
+		InsecureSkipVerify: true,
 	}
 
 	return credentials.NewTLS(tlsConfig)
