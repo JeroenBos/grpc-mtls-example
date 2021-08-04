@@ -6,7 +6,7 @@ import (
 	"crypto/x509"
 	"fmt"
 	"io/ioutil"
-	"os"
+	"time"
 
 	"github.com/islishude/grpc-mtls-example/greet"
 	"google.golang.org/grpc"
@@ -39,7 +39,11 @@ func LoadKeyPair() credentials.TransportCredentials {
 }
 
 func main() {
-	ip := os.Getenv("FOO")
+	// host := "localhost" // if running from host
+	host := "server" // if running from client docker
+	ip := host + ":10200" 
+	
+	time.Sleep(2 * time.Second) // give server time to start
 	conn, err := grpc.Dial(ip, grpc.WithTransportCredentials(LoadKeyPair()))
 	if err != nil {
 		panic(err)
